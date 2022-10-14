@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
+import moment from "moment";
+import Link from "next/link";
 
 import { getRecentPosts, getSimilarPosts } from "@Services";
 import { Category, SlimPost } from "@Types/posts";
-import moment from "moment";
-import Link from "next/link";
 
 type Props = {
   categories?: Category[];
@@ -29,7 +29,7 @@ const PostWidget = ({ categories, slug }: Props) => {
       <h3 className=" text-xl mb-8 font-semibold border-b pb-4">
         {slug ? "Related posts" : "Recent posts"}
       </h3>
-      {relatedPosts.map((post) => (
+      {relatedPosts.map((post: SlimPost) => (
         <div key={post.title} className="flex items-center w-full mb-4">
           <div className="w-16 flex-none">
             <img

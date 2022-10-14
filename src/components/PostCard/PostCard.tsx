@@ -1,7 +1,8 @@
 import React from "react";
-import { Post } from "@Types/posts";
 import Link from "next/link";
 import moment from "moment";
+
+import { Post } from "@Types/posts";
 
 type Props = {
   post: Post;
