@@ -1,7 +1,11 @@
 import React from "react";
 
 const CategorySection = () => {
-  return <div>CategorySection</div>;
+  return (
+    <div>
+      <p>CategorySection</p>
+    </div>
+  );
 };
 
 export default CategorySection;

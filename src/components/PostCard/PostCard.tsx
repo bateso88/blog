@@ -1,10 +1,10 @@
 import React from "react";
-import { PostData } from "@Types/posts";
+import { Post } from "@Types/posts";
 import Link from "next/link";
 import moment from "moment";
 
 type Props = {
-  post: PostData;
+  post: Post;
 };
 
 const PostCard = ({ post }: Props) => {
@@ -18,7 +18,7 @@ const PostCard = ({ post }: Props) => {
         />
       </div>
       <h1 className="transition duration-700 text-center mb-8 cursor-pointer hover:text-pink-600 text-3xl font-semibold">
-        <Link href={`/post/${post.slug}`}>{post.title}</Link>
+        <Link href={`/posts/${post.slug}`}>{post.title}</Link>
       </h1>
       <div className="block lg:flex text-center items-center justify-center mb-8 w-full">
         <div className="flex items-center justify-center mb-4 lg:mb-0 w-full lg:w-auto mr-8">
@@ -48,15 +48,17 @@ const PostCard = ({ post }: Props) => {
               d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
             />
           </svg>
-          <span>
-            {moment(post.createdAt).format('Do MMM, YYYY')}
-          </span>
+          <span>{moment(post.createdAt).format("Do MMM, YYYY")}</span>
         </div>
       </div>
-      <p className="text-center text-lg text-gray-700 font-normal px-4 lg:px-20 mb-8">{post.excerpt}</p>
+      <p className="text-center text-lg text-gray-700 font-normal px-4 lg:px-20 mb-8">
+        {post.excerpt}
+      </p>
       <div className="text-center">
-        <Link href={`/post/${post.slug}`}>
-          <span className="transition duration-500 transform hover:-translate-y-1 inline-block bg-pink-600 text-lg font-medium rounded-full text-white px-8 py-3 cursor-pointer">Continue reading</span>
+        <Link href={`/posts/${post.slug}`}>
+          <span className="transition duration-500 transform hover:-translate-y-1 inline-block bg-pink-600 text-lg font-medium rounded-full text-white px-8 py-3 cursor-pointer">
+            Continue reading
+          </span>
         </Link>
       </div>
     </div>

@@ -1,8 +1,8 @@
-export type Post = {
-  node: PostData;
+export type PostData = {
+  node: Post;
 };
 
-export type PostData = {
+export type Post = {
   author: Author;
   categories: Category[];
   createdAt: string;
@@ -11,6 +11,13 @@ export type PostData = {
   slug: string;
   title: string;
 };
+
+export type SlimPost = {
+  createdAt: string;
+  featuredImage: Image;
+  slug: string;
+  title: string;
+}
 
 export type Author = {
   bio: string;

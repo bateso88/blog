@@ -3,15 +3,15 @@ import Head from "next/head";
 import CategorySection from "@Components/CategorySection";
 import PostCard from "@Components/PostCard";
 import PostWidget from "@Components/PostWidget";
-import { getPosts } from "src/services";
-import { Post } from "@Types/posts";
+import { getPosts } from "@Services";
+import { PostData } from "@Types/posts";
 
 type Props = {
-  posts: Post[];
+  posts: PostData[];
 }
 
 
-const Home: NextPage = ({posts}: Props) => {
+const Home = ({posts}: Props) => {
   return (
     <div className="container mx-auto px-10 mb-8">
       <Head>
