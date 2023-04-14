@@ -1,4 +1,3 @@
-import React from "react";
 import { getPostDetails, getPosts } from "@Services";
 
 import Author from "@Components/Author";

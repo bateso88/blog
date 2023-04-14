@@ -22,6 +22,9 @@
       "@Components/*": [
         "src/components/*"
       ],
+      "@Helpers/*": [
+        "src/helpers/*"
+      ],
       "@Pages/*": [
         "src/pages/*"
       ],
