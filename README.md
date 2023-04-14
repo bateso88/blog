@@ -1,3 +1,11 @@
+### This website
+
+I am following [this tutorial](https://www.youtube.com/watch?v=HYv55DhgTuA) to build the bare bones of this website. Once I have a decent skeleton that I'm happy with, I will apply my own design, refactor to employ good code practices and write comprehensive tests. Then I will expand the website in whichever direction I choose!
+
+
+
+
+
 # Next.js + Tailwind CSS Example
 
 This example shows how to use [Tailwind CSS](https://tailwindcss.com/) [(v3.0)](https://tailwindcss.com/blog/tailwindcss-v3) with Next.js. It follows the steps outlined in the official [Tailwind docs](https://tailwindcss.com/docs/guides/nextjs).
