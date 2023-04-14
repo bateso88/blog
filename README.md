@@ -1,6 +1,6 @@
 ### This website
 
-I am following [this tutorial](https://www.youtube.com/watch?v=HYv55DhgTuA) to build the bare bones of this website. Once I have a decent skeleton that I'm happy with, I will apply my own design, refactor to employ good code practices and write comprehensive tests. Then I will expand the website in whichever direction I choose!
+I am following [this tutorial](https://www.youtube.com/watch?v=HYv55DhgTuA) to build the bare bones of this website. Once I have a decent skeleton that I'm happy with, I will apply my own design, refactor to employ best practices and write comprehensive tests. Then I will expand the website in whichever direction I choose!
 
 
 
