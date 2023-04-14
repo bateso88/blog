@@ -1,4 +1,4 @@
-import { request, gql } from "graphql-request";
+import { gql, request } from "graphql-request";
 
 const getPosts = async () => {
   const query = gql`
@@ -30,10 +30,7 @@ const getPosts = async () => {
       }
     }
   `;
-  const result = await request(
-    `${process.env.NEXT_PUBLIC_GRAPHCMS_ENDPOINT}`,
-    query
-  );
+  const result: any = await request(`${process.env.NEXT_PUBLIC_GRAPHCMS_ENDPOINT}`, query);
 
   return result.postsConnection.edges;
 };

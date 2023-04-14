@@ -1,4 +1,4 @@
-import { request, gql } from "graphql-request";
+import { gql, request } from "graphql-request";
 
 const getRecentPosts = async () => {
   const query = gql`
@@ -17,10 +17,7 @@ const getRecentPosts = async () => {
     }
   `;
 
-  const result = await request(
-    `${process.env.NEXT_PUBLIC_GRAPHCMS_ENDPOINT}`,
-    query
-  );
+  const result: any = await request(`${process.env.NEXT_PUBLIC_GRAPHCMS_ENDPOINT}`, query);
 
   return result.posts;
 };

@@ -3,7 +3,13 @@
 I am following [this tutorial](https://www.youtube.com/watch?v=HYv55DhgTuA) to build the bare bones of this website. Once I have a decent skeleton that I'm happy with, I will apply my own design, refactor to employ best practices and write comprehensive tests. Then I will expand the website in whichever direction I choose!
 
 
+Differences I've made "live" while following tutorial. 
+1. Typescript instead of js
+2. File structure (services in different files, components in different folders)
+3. Added es lint
+4. ....
 
+Blog post exploring why? E.g. why is typescript better than js (useful for me to find out!)? Why did I structure files differently? Why es lint... why does order of imports matter?
 
 
 # Next.js + Tailwind CSS Example

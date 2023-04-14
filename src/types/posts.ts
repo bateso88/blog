@@ -17,7 +17,7 @@ export type SlimPost = {
   featuredImage: Image;
   slug: string;
   title: string;
-}
+};
 
 export type Author = {
   bio: string;

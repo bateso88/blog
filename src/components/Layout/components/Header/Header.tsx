@@ -1,7 +1,7 @@
-import Link from "next/link";
 import React, { useEffect, useState } from "react";
-
+import Link from "next/link";
 import { getCategories } from "@Services";
+
 import { Category } from "@Types/posts";
 
 const Header = () => {
@@ -15,9 +15,7 @@ const Header = () => {
       <div className="border-b w-full inline-block border-blue-400 py-8">
         <div className="md:float-left block">
           <Link href="/">
-            <span className="cursor-pointer font-bold text-4xl text-white">
-              BatesBlog
-            </span>
+            <span className="cursor-pointer font-bold text-4xl text-white">BatesBlog</span>
           </Link>
         </div>
         <div className="hidden md:float-left md:contents">

@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
-import moment from "moment";
 import Link from "next/link";
-
 import { getRecentPosts, getSimilarPosts } from "@Services";
+import moment from "moment";
+
 import { Category, SlimPost } from "@Types/posts";
 
 type Props = {
@@ -13,22 +13,16 @@ type Props = {
 const PostWidget = ({ categories, slug }: Props) => {
   const [relatedPosts, setRelatedPosts] = useState<SlimPost[]>([]);
   useEffect(() => {
-    if (slug) {
-      getSimilarPosts(categories, slug).then((result) =>
-        setRelatedPosts(result)
-      );
+    if (slug && categories) {
+      getSimilarPosts(categories, slug).then((result) => setRelatedPosts(result));
     } else {
       getRecentPosts().then((result) => setRelatedPosts(result));
     }
   }, [slug]);
 
-  // console.log(relatedPosts);
-
   return (
     <div className="bg-white shadow-lg rounded-lg p-8 mb-8">
-      <h3 className=" text-xl mb-8 font-semibold border-b pb-4">
-        {slug ? "Related posts" : "Recent posts"}
-      </h3>
+      <h3 className=" text-xl mb-8 font-semibold border-b pb-4">{slug ? "Related posts" : "Recent posts"}</h3>
       {relatedPosts.map((post: SlimPost) => (
         <div key={post.title} className="flex items-center w-full mb-4">
           <div className="w-16 flex-none">
@@ -41,9 +35,7 @@ const PostWidget = ({ categories, slug }: Props) => {
             />
           </div>
           <div className="flex-grow ml-4">
-            <p className="text-gray-500 text-xs">
-              {moment(post.createdAt).format(`DD/MM/YYYY`)}
-            </p>
+            <p className="text-gray-500 text-xs">{moment(post.createdAt).format(`DD/MM/YYYY`)}</p>
             <Link href={`/posts/${post.slug}`} key={post.title}>
               {post.title}
             </Link>

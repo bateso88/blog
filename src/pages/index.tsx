@@ -1,9 +1,9 @@
 import Head from "next/head";
+import { getPosts } from "@Services";
 
 import CategorySection from "@Components/CategorySection";
 import PostCard from "@Components/PostCard";
 import PostWidget from "@Components/PostWidget";
-import { getPosts } from "@Services";
 import { PostData } from "@Types/posts";
 
 type Props = {
