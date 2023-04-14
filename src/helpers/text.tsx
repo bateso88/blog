@@ -28,7 +28,7 @@ const textFormatting = {
   paragraph: "mb-8",
 };
 
-const formattedText = (textBlock, type) => (
+const formattedText = (textBlock: string[], type: string) => (
   <p className={textFormatting[type]}>
     {textBlock.map((text: string) => (
       <>{text}</>
@@ -36,7 +36,7 @@ const formattedText = (textBlock, type) => (
   </p>
 );
 
-export const getContentFragment = (text: string | ReactNode, typeObject: { children: ReactNode; type: string }) => {
+export const getContentFragment = (text: string[], typeObject: { children: ReactNode; type: string }) => {
   const modifiedText = typeObject ? emphasizeText(text, typeObject) : text;
 
   if (typeObject.type) {
