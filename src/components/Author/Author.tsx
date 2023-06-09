@@ -1,8 +1,9 @@
-import { Author } from "@Types/posts";
 import Image from "next/image";
 
+import { Author as AuthorType } from "@Types/posts";
+
 type Props = {
-  author: Author;
+  author: AuthorType;
 };
 
 const Author = ({ author }: Props) => {
@@ -17,10 +18,10 @@ const Author = ({ author }: Props) => {
           className="align-middle rounded"
           src={author.photo.url}
         />
-      <div className="m-auto text-center">
-      <h3 className="text-white text-xl font-bold">{author.name}</h3>
-      <p className="text-white text-lg">{author.bio}</p>
-      </div>
+        <div className="m-auto text-center">
+          <h3 className="text-white text-xl font-bold">{author.name}</h3>
+          <p className="text-white text-lg">{author.bio}</p>
+        </div>
       </div>
     </div>
   );

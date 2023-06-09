@@ -12,6 +12,17 @@ export type Post = {
   title: string;
 };
 
+export type PostWithContent = {
+  author: Author;
+  categories: Category[];
+  content: { raw: RawContent };
+  createdAt: string;
+  excerpt: string;
+  featuredImage: Image;
+  slug: string;
+  title: string;
+};
+
 export type SlimPost = {
   createdAt: string;
   featuredImage: Image;
@@ -33,4 +44,20 @@ export type Category = {
 
 export type Image = {
   url: string;
+};
+
+export type RawContent = {
+  children: Child[];
+};
+
+export type Child = {
+  type: string;
+  children: Grandchild[];
+};
+
+export type Grandchild = {
+  text: string;
+  italic?: boolean;
+  bold?: boolean;
+  underline?: boolean;
 };

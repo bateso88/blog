@@ -1,18 +1,20 @@
 import React, { ReactNode } from "react";
 
-export const emphasizeText = (text: ReactNode, obj: any) => {
-  // Type correctly
-  let emphasizedText = text;
+import { Child, Grandchild, RawContent } from "@Types/posts";
 
-  if (obj.bold) {
+const emphasizeText = (grandchild: Grandchild) => {
+  const { text } = grandchild;
+  let emphasizedText: string | ReactNode = grandchild.text;
+
+  if (grandchild.bold) {
     emphasizedText = <b>{text}</b>;
   }
 
-  if (obj.italic) {
+  if (grandchild.italic) {
     emphasizedText = <em>{text}</em>;
   }
 
-  if (obj.underline) {
+  if (grandchild.underline) {
     emphasizedText = <u>{text}</u>;
   }
   return emphasizedText;
@@ -28,24 +30,16 @@ const textFormatting = {
   paragraph: "mb-8",
 };
 
-const formattedText = (textBlock: string[], type: string) => (
-  <p className={textFormatting[type]}>
-    {textBlock.map((text: string) => (
-      <>{text}</>
-    ))}
-  </p>
-);
+export const getFragment = (child: Child) => {
+  const modifiedText = child.children.map((grandchild: Grandchild) => emphasizeText(grandchild));
 
-export const getContentFragment = (text: string[], typeObject: { children: ReactNode; type: string }) => {
-  const modifiedText = typeObject ? emphasizeText(text, typeObject) : text;
-
-  if (typeObject.type) {
-    return typeObject.type === "image" ? (
-      <img alt={typeObject.title} height={typeObject.height} width={typeObject.width} src={typeObject.src} />
-    ) : (
-      formattedText(modifiedText, typeObject.type)
-    );
-  }
-
-  return modifiedText;
+  return (
+    <p className={(textFormatting as any)[child.type]}>
+      {modifiedText.map((text: string | ReactNode) => (
+        <>{text}</>
+      ))}
+    </p>
+  );
 };
+
+export const formatContent = (content: RawContent) => content.children.map((child) => getFragment(child));

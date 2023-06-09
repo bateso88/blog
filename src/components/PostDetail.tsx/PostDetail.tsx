@@ -1,12 +1,14 @@
 import moment from "moment";
 
-import { getContentFragment } from "@Helpers/text";
+import { formatContent } from "@Helpers/text";
+import { PostWithContent } from "@Types/posts";
 
 type Props = {
-  post: any; // for now
+  post: PostWithContent;
 };
 
 const PostDetail = ({ post }: Props) => {
+  console.log(post);
   return (
     <div className="bg-white shadow-lg rounded-lg lg:p-8 pb-12 mb-8">
       <div className="relative overflow-hidden shadow-md mb-6">
@@ -43,12 +45,7 @@ const PostDetail = ({ post }: Props) => {
           </div>
         </div>
         <h1 className="mb-8 text-3xl font-semibold">{post.title}</h1>
-        {post.content.raw.children.map((typeObject: { children: any[]; type: string }) => {
-          // Typesss
-          const children = typeObject.children.map((item) => getContentFragment(item.text, item));
-
-          return getContentFragment(children, typeObject);
-        })}
+        {formatContent(post.content.raw)}
       </div>
     </div>
   );
