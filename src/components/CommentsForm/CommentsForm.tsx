@@ -8,23 +8,28 @@ type Props = {
 const CommentsForm = ({ slug }: Props) => {
   const [error, setError] = useState(false);
   const [isSuccessMessageVisible, setisSuccessMessageVisible] = useState(false);
-  const commentElement = useRef();
-  const nameElement = useRef();
-  const emailElement = useRef();
-  const storeDataElement = useRef();
+  const commentElement = useRef<HTMLTextAreaElement>(null);
+  const nameElement = useRef<HTMLInputElement>(null);
+  const emailElement = useRef<HTMLInputElement>(null);
+  const storeDataElement = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
-    nameElement.current.value = window.localStorage.getItem("name");
-    emailElement.current.value = window.localStorage.getItem("email");
+    if (nameElement.current !== null) {
+      nameElement.current.value = window.localStorage.getItem("name") || "";
+    }
+    if (emailElement.current !== null) {
+      emailElement.current.value = window.localStorage.getItem("email") || "";
+    }
   }, []);
 
   const handleSubmitComment = () => {
     setError(false);
 
-    const { value: comment } = commentElement.current;
-    const { value: name } = nameElement.current;
-    const { value: email } = emailElement.current;
-    const { checked: storeData } = storeDataElement.current;
+    const comment = commentElement?.current?.value;
+    const name = nameElement?.current?.value;
+    const email = emailElement?.current?.value;
+    const storeData = storeDataElement?.current?.value;
+
     if (!comment || !name || !email) {
       setError(true);
       return;

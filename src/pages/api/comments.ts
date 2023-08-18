@@ -2,17 +2,16 @@
 import type { NextApiRequest, NextApiResponse } from "next";
 import { gql, GraphQLClient } from "graphql-request";
 
-const graphqlApi = process.env.NEXT_PUBLIC_GRAPHCMS_ENDPOINT;
-const graphcmsToken = process.env.NEXT_PUBLIC_GRAPHCMS_TOKEN;
-
 type Data = {
-  name: string;
+  createComment: {
+    id: string;
+  };
 };
 
 export default async function comments(req: NextApiRequest, res: NextApiResponse<Data>) {
-  const graphqlClient = new GraphQLClient(graphqlApi, {
+  const graphqlClient = new GraphQLClient(`${process.env.NEXT_PUBLIC_GRAPHCMS_ENDPOINT}`, {
     headers: {
-      authorization: `Bearer ${graphcmsToken}`,
+      authorization: `Bearer ${process.env.NEXT_PUBLIC_GRAPHCMS_TOKEN}`,
     },
   });
 
@@ -24,10 +23,9 @@ export default async function comments(req: NextApiRequest, res: NextApiResponse
     }
   `;
   try {
-    const result = await graphqlClient.request(query, req.body);
+    const result: { createComment: { id: string } } = await graphqlClient.request(query, req.body);
     return res.status(200).send(result);
-  } catch (error) {
-    console.log(error);
+  } catch (error: any) {
     return res.status(500).send(error);
   }
 }
