@@ -1,8 +1,8 @@
 import { getPostDetails, getPosts } from "@Services";
 
 import Author from "@Components/Author";
-import CategorySection from "@Components/CategorySection";
-import CommentSection from "@Components/CommentSection";
+import Categories from "@Components/Categories";
+import Comments from "@Components/Comments";
 import CommentsForm from "@Components/CommentsForm";
 import PostDetail from "@Components/PostDetail.tsx";
 import PostWidget from "@Components/PostWidget";
@@ -19,12 +19,12 @@ const PostDetails = ({ post }: Props) => {
           <PostDetail post={post} />
           <Author author={post.author} />
           <CommentsForm slug={post.slug} />
-          <CommentSection slug={post.slug} />
+          <Comments slug={post.slug} />
         </div>
         <div className="col-span-1 lg:col-span-4">
           <div className="relative lg:sticky top-8">
             <PostWidget slug={post.slug} categories={post.categories.map((category: Category) => category.slug)} />
-            <CategorySection />
+            <Categories />
           </div>
         </div>
       </div>

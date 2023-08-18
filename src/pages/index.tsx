@@ -1,7 +1,7 @@
 import Head from "next/head";
 import { getPosts } from "@Services";
 
-import CategorySection from "@Components/CategorySection";
+import Categories from "@Components/Categories";
 import PostCard from "@Components/PostCard";
 import PostWidget from "@Components/PostWidget";
 import { PostData } from "@Types/posts";
@@ -26,7 +26,7 @@ const Home = ({ posts }: Props) => {
         <div className="lg:col-span-4 col-span-1">
           <div className="lg:sticky relative top-8">
             <PostWidget />
-            <CategorySection />
+            <Categories />
           </div>
         </div>
       </div>
