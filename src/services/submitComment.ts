@@ -1,6 +1,6 @@
 import { Comment } from "@Types/posts";
 
-export const submitComment = async (comment: Comment) => {
+const submitComment = async (comment: Comment) => {
   const result = await fetch("/api/comments", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
@@ -9,3 +9,5 @@ export const submitComment = async (comment: Comment) => {
 
   return result.json();
 };
+
+export default submitComment;
