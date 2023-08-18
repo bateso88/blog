@@ -21,7 +21,7 @@ const PostWidget = ({ categories, slug }: Props) => {
   }, [slug]);
 
   return (
-    <div className="bg-white shadow-lg rounded-lg p-8 mb-8">
+    <div className="bg-white shadow-lg rounded p-8 mb-8">
       <h3 className=" text-xl mb-8 font-semibold border-b pb-4">{slug ? "Related posts" : "Recent posts"}</h3>
       {relatedPosts.map((post: SlimPost) => (
         <div key={post.title} className="flex items-center w-full mb-4">
@@ -30,7 +30,7 @@ const PostWidget = ({ categories, slug }: Props) => {
               alt={post.title}
               height="60px"
               width="60px"
-              className="align-middle rounded-full"
+              className="align-middle rounded"
               src={post.featuredImage.url}
             />
           </div>

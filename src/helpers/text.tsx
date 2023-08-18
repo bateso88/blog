@@ -3,19 +3,18 @@ import React, { ReactNode } from "react";
 import { Child, Grandchild, RawContent } from "@Types/posts";
 
 const emphasizeText = (grandchild: Grandchild) => {
-  const { text } = grandchild;
   let emphasizedText: string | ReactNode = grandchild.text;
 
   if (grandchild.bold) {
-    emphasizedText = <b>{text}</b>;
+    emphasizedText = <b>{emphasizedText}</b>;
   }
 
   if (grandchild.italic) {
-    emphasizedText = <em>{text}</em>;
+    emphasizedText = <em>{emphasizedText}</em>;
   }
 
   if (grandchild.underline) {
-    emphasizedText = <u>{text}</u>;
+    emphasizedText = <u>{emphasizedText}</u>;
   }
   return emphasizedText;
 };
@@ -42,4 +41,4 @@ export const getFragment = (child: Child) => {
   );
 };
 
-export const formatContent = (content: RawContent) => content.children.map((child) => getFragment(child));
+export const formatContent = (content: RawContent) => content.children.map((child: Child) => getFragment(child));

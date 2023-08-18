@@ -8,7 +8,7 @@ type Props = {
 
 const Author = ({ author }: Props) => {
   return (
-    <div className="mb-8 relative rounded-lg bg-black bg-opacity-20">
+    <div className="mb-8 relative rounded bg-black bg-opacity-20">
       <div className="flex flex-row">
         <Image
           alt={author.name}

@@ -9,12 +9,12 @@ type Props = {
 
 const PostCard = ({ post }: Props) => {
   return (
-    <div className="bg-white shadow-lg rounded-lg p-0 lg:p-8 pb-12 mb-8">
+    <div className="bg-white shadow-lg rounded p-0 lg:p-8 pb-12 mb-8">
       <div className="relative overflow-hidden shadow-md pb-80 mb-6">
         <img
           src={post.featuredImage.url}
           alt={post.title}
-          className="object-top absolute h-80 w-full object-cover shadow-lg rounded-t-lg lg:rounded-lg"
+          className="object-top absolute h-80 w-full object-cover shadow-lg rounded-t-lg lg:rounded"
         />
       </div>
       <h1 className="transition duration-700 text-center mb-8 cursor-pointer hover:text-pink-600 text-3xl font-semibold">
@@ -26,7 +26,7 @@ const PostCard = ({ post }: Props) => {
             alt={post.author.name}
             height="30px"
             width="30px"
-            className="align-middle rounded-full"
+            className="align-middle rounded"
             src={post.author.photo.url}
           />
           <p className="inline align-middle text-gray-700 ml-2 text-lg">{post.author.name}</p>
@@ -52,7 +52,7 @@ const PostCard = ({ post }: Props) => {
       <p className="text-center text-lg text-gray-700 font-normal px-4 lg:px-20 mb-8">{post.excerpt}</p>
       <div className="text-center">
         <Link href={`/posts/${post.slug}`}>
-          <span className="transition duration-500 transform hover:-translate-y-1 inline-block bg-pink-600 text-lg font-medium rounded-full text-white px-8 py-3 cursor-pointer">
+          <span className="transition duration-500 transform hover:-translate-y-1 inline-block bg-pink-600 text-lg font-medium rounded text-white px-5 py-3 cursor-pointer">
             Continue reading
           </span>
         </Link>

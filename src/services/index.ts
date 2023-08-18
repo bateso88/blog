@@ -3,5 +3,6 @@ import getPostDetails from "./getPostDetails";
 import getPosts from "./getPosts";
 import getRecentPosts from "./getRecentPosts";
 import getSimilarPosts from "./getSimilarPosts";
+import { submitComment } from "./submitComment";
 
-export { getPosts, getRecentPosts, getSimilarPosts, getCategories, getPostDetails };
+export { getPosts, getRecentPosts, getSimilarPosts, getCategories, getPostDetails, submitComment };

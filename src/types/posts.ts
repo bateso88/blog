@@ -61,3 +61,9 @@ export type Grandchild = {
   bold?: boolean;
   underline?: boolean;
 };
+
+export type Comment = {
+  name: string;
+  email: string;
+  comment: string;
+};

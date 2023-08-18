@@ -10,7 +10,7 @@ type Props = {
 const PostDetail = ({ post }: Props) => {
   console.log(post);
   return (
-    <div className="bg-white shadow-lg rounded-lg lg:p-8 pb-12 mb-8">
+    <div className="bg-white shadow-lg rounded lg:p-8 pb-12 mb-8">
       <div className="relative overflow-hidden shadow-md mb-6">
         <img src={post.featuredImage.url} alt={post.title} className="object-top h-full w-full rounded-t-lg" />
       </div>
@@ -21,7 +21,7 @@ const PostDetail = ({ post }: Props) => {
               alt={post.author.name}
               height="30px"
               width="30px"
-              className="align-middle rounded-full"
+              className="align-middle rounded"
               src={post.author.photo.url}
             />
             <p className="inline align-middle text-gray-700 ml-2 text-lg">{post.author.name}</p>

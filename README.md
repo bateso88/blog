@@ -11,7 +11,7 @@ Differences I've made "live" while following tutorial.
 
 - Blog post exploring why? E.g. why is typescript better than js (useful for me to find out!)? Why did I structure files differently? Why es lint... why does order of imports matter?
 
-- Blog post discovering learnings from building this. Tailwind feels like a lot of repitition - Could build a mini design system/start forming reusable components for e.g. text/images/types of divs
+- Blog post discovering learnings from building this. Tailwind feels like a lot of repitition - Could build a mini design system/start forming reusable components for e.g. text/images/types of divs, why is useRef useful?
 
 ## Deploy your own
 
