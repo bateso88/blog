@@ -11,7 +11,7 @@ Differences I've made "live" while following tutorial.
 
 - Blog post exploring why? E.g. why is typescript better than js (useful for me to find out!)? Why did I structure files differently? Why es lint... why does order of imports matter?
 
-- Blog post discovering learnings from building this. Tailwind feels like a lot of repitition - Could build a mini design system/start forming reusable components for e.g. text/images/types of divs, why is useRef useful?
+- Blog post discovering learnings from building this. Tailwind feels like a lot of repitition - Could build a mini design system/start forming reusable components for e.g. text/images/types of divs, why is useRef useful? Pros/cons of video walkthroughs? Pro - quick (not really though), useful for original config/setup, useful 'springboard' to expand website. Con - A lotttt of mindless copying of styling, inhibits individuality, sometimes skips over more complex things quite quickly(e.g. the text formatter for posts.), code quality up to scratch?, etc. 
 
 ## Deploy your own
 
